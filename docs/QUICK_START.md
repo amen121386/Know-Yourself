@@ -11,14 +11,16 @@
 
 ```mermaid
 flowchart LR
-    A["第 1 步：复制【十维自省咒语】<br>丢给任意 AI 分步问答剖析"] --> B["第 2 步：复制【提纯与收敛咒语】<br>强制挤干水分，输出专属模型"]
+    A["第 1 步：复制【自适应自省咒语】<br>丢给任意 AI（先答通用母题，再答专属分支）"] --> B["第 2 步：复制【提纯与收敛咒语】<br>强制挤干水分，输出专属模型"]
     B --> C["第 3 步：把内容贴进 Obsidian<br>你的专属外脑立刻成型！"]
 ```
 
-### 第一步：开启认知架构自省访谈（让 AI 问你）
+### 第一步：开启认知自省访谈（让 AI 问你）
 1. 复制本项目中 [01_Socratic_Interview.md](../01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md) 里的整段文字；
 2. 打开你手机或电脑上的**任意 AI 软件**（ChatGPT、Claude、Kimi、豆包、微信 AI 均可），把文字发给它；
-3. AI 会化身为苏格拉底式的架构师，严格按照**【现实生态位 ➔ 能力定价 ➔ 目标函数 ➔ 价值排序 ➔ 真实行为 ➔ 历史成败 ➔ 认知欲望 ➔ 战略分层 ➔ 道德底线 ➔ 协同契约】**这十个层次分步向你提问。**放轻松，像跟智慧的长者交谈一样，如实说出你的心里话。**
+3. **两阶段自适应体验**：
+   - **阶段一（人类相通母题）**：AI 会带你剖析时间有限性、安全与自由张力、多巴胺陷阱等 5 大全人类共通课题；
+   - **阶段二（专属情境分支）**：根据你的特质，AI 会自动为你匹配【破局者（学生/青年）】、【跃迁者（职场/第二曲线）】、【创造者（学者/创作者）】或【重构者（危机防守）】专属追问。
 
 ### 第二步：挤干水分与反空转提纯（让 AI 建模）
 1. 回答完毕后，在同一个对话窗口中，复制 [02_Fact_Extraction.md](../01_AI_Agent_Rules/onboarding/02_Fact_Extraction.md) 的文字发给它；
@@ -42,7 +44,7 @@ flowchart LR
 ### 1. 架构映射
 - **底座 (Storage Layer)**：`00_Life_OS_Template` 遵循 PARA 本地优先哲学，无云端绑定，受严苛 `.gitignore` 保护。
 - **副驾 (Agent Layer)**：`01_AI_Agent_Rules/` 承载 Agent 行为法则与技能包。
-  - 核心外挂技能：`01_AI_Agent_Rules/skills/socratic-onboarding/`（支持 Agent 原生以状态机方式引导用户交互并直接写盘）。
+  - 核心外挂技能：`01_AI_Agent_Rules/skills/socratic-onboarding/`（支持 Agent 原生以两阶段状态机自适应引导用户交互并直接写盘）。
 
 ### 2. 自动化冷启动 (Automated Ingestion)
 将 `01_AI_Agent_Rules/onboarding/03_Vault_Auto_Ingestion.md` 中的指令直接输入给你的本地 Agent：
