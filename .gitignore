@@ -1,0 +1,41 @@
+# ==========================================
+# Know Yourself OS - Strict Security & Privacy Ignore
+# ==========================================
+
+# 1. Credentials, Secrets & Tokens (绝对禁止凭据泄露)
+*.env
+*.env.*
+*.key
+*.pem
+*.cert
+*.token
+*secret*
+*credential*
+id_rsa*
+*.id_rsa
+
+# 2. Obsidian Workspaces & Sensitive Plugin States
+.obsidian/workspace*
+.obsidian/graph.json
+.obsidian/plugins/*/data.json
+.trash/
+
+# 3. Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+._*
+
+# 4. Logs and Temporary Data
+*.log
+logs/
+temp/
+tmp/
+scratch/
+
+# 5. Local Private Notes (用户如有私有文件夹可在此声明)
+private/
+_private/
+my_secrets/
