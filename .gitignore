@@ -35,7 +35,9 @@ temp/
 tmp/
 scratch/
 
-# 5. Local Private Notes (用户如有私有文件夹可在此声明)
+# 5. Local Private Data Vault (数据主权保护：仅跟踪 .gitkeep，忽略用户一切真实笔记与私密决策)
+vault/**/*.md
+!vault/**/.gitkeep
 private/
 _private/
 my_secrets/

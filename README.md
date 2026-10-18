@@ -1,12 +1,11 @@
 # Know Yourself (认识你自己) 🦉
-### AI 原生驱动的双核个人操作系统 (Dual-Core Life OS & Socratic AI Workflow)
+### 本地优先、反顺从的个人决策操作系统与外接大脑 (Local-First, Anti-Sycophancy Decision OS & External Brain)
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" alt="License: CC BY-NC-SA 4.0">
-  <img src="https://img.shields.io/badge/Philosophy-Socratic%20Maieutics-gold.svg" alt="Philosophy: Socratic">
-  <img src="https://img.shields.io/badge/Architecture-Universal%20%2B%20Adaptive-green.svg" alt="Architecture: Adaptive">
-  <img src="https://img.shields.io/badge/Focus-Truth%20%26%20FACT-blue.svg" alt="Focus: Truth & FACT">
-  <img src="https://img.shields.io/badge/Platform-Obsidian%20%7C%20AI%20Agent-purple.svg" alt="Platform">
+  <img src="https://img.shields.io/badge/Architecture-Tiered%20Memory%20%7C%20PDR-blue.svg" alt="Architecture">
+  <img src="https://img.shields.io/badge/Core-Anti--Sycophancy%20Gadfly-red.svg" alt="Core: Anti-Sycophancy">
+  <img src="https://img.shields.io/badge/Privacy-Local--First%20Engine-green.svg" alt="Privacy: Local-First">
 </p>
 
 > “认识你自己 (Nosce te ipsum)。” —— 德尔斐神谕刻辞 / 苏格拉底  
@@ -26,15 +25,16 @@
 
 ---
 
-## ⚡ 核心亮点：为什么它不是又一个平庸的空模版？
+## ⚠️ 解决当前 AI 外接大脑的两大核心工程悖论
 
-大部分个人知识库在下载后 3 天就被废弃，是因为“死板的空文件夹无法表达鲜活的个人”。**Know Yourself 独创了三大核心引擎**：
+当前很多个人知识库在挂载大模型时，往往陷入两大失效死循环：
 
-| 引擎模块 | 说明 | 解决的痛点 |
-| :--- | :--- | :--- |
-| **1. 通用母题 + 自适应分支助产** | 内置 [两阶段自省访谈协议](01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md)，先勘测**人类共通的 5 大底层命题（有限性/安全自由张力/多巴胺陷阱/价值决断/防爆红线）**，再智能路由至**破局者、跃迁者、创造者、重构者** 4 大处境分支展开精准剖析 | 既有跨越人类命运的深邃底色，又能自适应千差万别的个人现实，彻底杜绝套话 |
-| **2. 双核流动知识底座** | 纯本地 Markdown（Obsidian 开箱即用），严格划分为 INBOX、PROJECTS、AREAS、RESOURCES、ARCHIVE | 终结碎片信息满天飞，降低认知内耗 |
-| **3. FACT 事实核销契约** | 严谨务实的 AI 行为准则，任务绝不虚假承诺，必须经终端实测验证方可打勾 `[FACT]` | 向大模型胡说八道和幻觉宣战，打造确定性知识闭环 |
+1. **“静态文件的线性堆积”不等于“系统的自我进化”**：  
+   随时间无序增加的纯文本笔记，带来的不是智慧，而是**上下文腐败（Context Rot）与注意力稀释（Lost-in-the-Middle）**。  
+   👉 **本项目解法**：建立三层记忆蒸馏架构（L1 热记忆 / L2 温记忆 / L3 冷归档），用定期沉淀的“个人认知偏差元规律”，替代冗长的历史流水账。
+2. **“接入通用大模型”绝不等于拥有了“哲学视角的第三者”**：  
+   商业大模型天然具有顺从与谄媚（Sycophancy）倾向，极易沦为用户主观偏执的合理化放大器。  
+   👉 **本项目解法**：固化系统级对抗性审视协议（苏格拉底牛虻、红队证伪、主客体剥离双盲测试与四维正交博弈），逼迫 AI 充当冷峻的思维手术刀。
 
 ---
 
@@ -42,100 +42,133 @@
 
 ```mermaid
 flowchart TD
-    subgraph Socratic ["🦉 通用母题 + 自适应分支冷启动引擎"]
-        UNIVERSAL["阶段一：全人类共通五大母题<br>(有限性/自由与安全/多巴胺陷阱/价值决断/防爆红线)"] --> ROUTER{"处境智能路由"}
-        ROUTER -->|青年/探索期| B1["分支 A: 破局者"]
-        ROUTER -->|职场/第二曲线| B2["分支 B: 跃迁者"]
-        ROUTER -->|创作者/学者| B3["分支 C: 创造者"]
-        ROUTER -->|危机/底线防守| B4["分支 D: 重构者"]
-        B1 --> EXTRACT["反空转事实提纯 (挤干愿望水分，输出专属模型)"]
-        B2 --> EXTRACT
-        B3 --> EXTRACT
-        B4 --> EXTRACT
-        EXTRACT --> INGEST["一键结构化落盘 (映射为专属项目、责任区与定制化 Agent 提示词)"]
+    subgraph Human ["👤 现实决策者 (Human Operator)"]
+        SITUATION["现实境遇 / 待决命题"]
     end
 
-    subgraph Core1 ["🏛️ 静态知识底座 (Obsidian Vault)"]
-        INGEST -.-> PROJECTS["01_PROJECTS (主线战役)"]
-        INGEST -.-> AREAS["02_AREAS (长青守护区)"]
-        INBOX["00_INBOX (灵感捕获)"] --> PROJECTS
-        INBOX --> AREAS
-        INBOX --> RESOURCES["03_RESOURCES (知识/AI资产)"]
-        PROJECTS --> ARCHIVE["04_ARCHIVE (历史归档)"]
+    subgraph MemoryTier ["🏛️ 三层记忆蒸馏拓扑 (Local Vault)"]
+        L1["L1 活跃境遇快照 (Atlas & Bias Registry)<br>< 2000 Tokens 核心约束"]
+        L2["L2 决策账本 (PDR Ledger)<br>进行中的推演与渠道调研"]
+        L3["L3 历史冷归档 (Immutable Archive)<br>已结案复盘记录"]
+        INBOX["inbox/ 写入隔离缓冲池<br>(Agent 唯一允许落盘区)"]
+        L2 -->|定期记忆蒸馏| L1
+        L2 -->|结案归档| L3
     end
 
-    subgraph Core2 ["⚡ 动态智能副驾 (AI Agent Co-Pilot)"]
-        PROMPT["定制化 Agent 规则 (System Prompt)"]
-        SKILL["socratic-onboarding 专属助产技能"]
-        FACT["FACT 事实核销闭环 (拒绝幻觉)"]
-        AUTOSYNC["[可选] 部署反哺写入 OS"]
+    subgraph Protocols ["⚡ 哲学第三者协议矩阵 (Protocols)"]
+        P1["01_哲学观察者 (反顺从/牛虻/双盲测试)"]
+        P2["02_信息差破壁者 (多维信源/渠道审计)"]
+        P3["03_多视角顾问团 (审计/风险/机会成本/哲学)"]
+        P4["04_记忆蒸馏流水线 (认知偏差提炼)"]
     end
 
-    Core2 -->|协助执行与推进| PROJECTS
-    Core2 -->|实测跑通后自动登记| RESOURCES
+    subgraph Agents ["🤖 通用智能体矩阵 (Any AI Agent)"]
+        BOOTSTRAP["AGENTS.md / CLAUDE.md<br>(通用宪章与系统提示词)"]
+    end
+
+    SITUATION -->|发起咨询| Agents
+    Agents -->|静默对齐| L1
+    Agents -->|强制执行| Protocols
+    Protocols -->|生成推演草稿| INBOX
+    INBOX -->|人工核准后合入| L2
 ```
 
 ---
 
-## 🚀 极速开箱使用（文科生与非技术用户）
+## 🌟 五大核心支撑支柱
 
-👉 **直接阅读：[小白 3 步开箱即用指南](docs/QUICK_START.md)**
+### 1. 三层记忆蒸馏与读写分离 (Tiered Memory Architecture)
+- **L1 活跃快照（Atlas）**：严格控制在 2000 Token 内，记录当前核心主线、生存缓冲期、每日黄金精力及绝对红线。
+- **L2 决策账本（Ledger）**：追踪正在推进的重大抉择（deliberating / executing）。
+- **L3 历史冷归档（Archive）**：已结案的决策冷数据，杜绝干扰日常 Context。
+- **写隔离缓冲（inbox/）**：外部 Agent 仅被允许写入 `inbox/`，严禁未经人工核准篡改核心数据。
 
-1. **第一步（对话）**：把 [01_Socratic_Interview.md](01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md) 复制发给任意 AI（ChatGPT / Claude / Kimi / 豆包），按引导完成 5 大母题与专属分支问答；
-2. **第二步（提纯）**：把 [02_Fact_Extraction.md](01_AI_Agent_Rules/onboarding/02_Fact_Extraction.md) 发给它，一键挤干水分并生成属于你的主线卡与长青守护区；
-3. **第三步（开启）**：下载免费的 [Obsidian](https://obsidian.md/) 打开 `00_Life_OS_Template` 文件夹，把内容粘贴进去，系统瞬间活起来！
+### 2. 个人决策记录协议 (Personal Decision Record, PDR)
+彻底击碎“事后诸葛亮偏见（Hindsight Bias）”：
+- **事前推演**：明确 3 大核心假设 + **事前验尸（Pre-Mortem，假定一年后失败最可能死于什么）**；
+- **证伪红线**：预设客观**强制止损线（Kill Switch）**；
+- **底稿锁定**：通过 Git Commit 永久固化历史事实底稿；
+- **事后复盘**：到达预设复盘日期，拿客观现实硬碰当年假设，区分是实力还是运气，沉淀元规律。
 
-*(专业开发者亦可在 [QUICK_START.md](docs/QUICK_START.md) 中查阅 `socratic-onboarding` 技能与本地 Agent 全自动落盘指南)*
+### 3. 对抗性审视与哲学第三者 (Anti-Sycophancy Protocols)
+- **苏格拉底牛虻**：严禁上来就迎合与肯定，必须首先对逻辑链中的隐含跳跃进行三轮反驳；
+- **主客体剥离双盲测试**：将纠结处境抽象为第三方陌生人案例，反问宿主：“如果是旁观者处于此局，你会建议他割肉还是加注？”；
+- **四维正交博弈**：信息审计员、悲观风险官、机会成本精算师、存在主义哲学家四方制衡。
+
+### 4. 跨平台通用 Agent 引导矩阵 (Universal Agent Bootstrapper)
+- 根目录内置 `AGENTS.md` 与 `CLAUDE.md`，任何支持 Agent 规则的工具（Antigravity、Cursor、Claude Code、Codex）均能免配置接入，自适应遵从系统宪章。
+
+### 5. 引擎与私有数据物理隔离 (Engine vs. Private Vault)
+- 公开仓库提供 100% 完整的算法、协议库、模板、自动化脚本与示例；
+- 本地真实个人境遇数据严格受 `.gitignore` 保护，支持无感挂载私有子模块，实现绝对数据主权。
 
 ---
 
 ## 📂 仓库结构
 
 ```text
-Know Yourself/
-├── .gitignore                   # 安全防火墙：严防私密配置、Token、API Key 泄露
-├── LICENSE                      # 知识共享署名-非商业性使用-相同方式共享 (CC BY-NC-SA 4.0)
-├── README.md                    # 本文件
-├── 00_Life_OS_Template/         # 【开箱即用】纯净 Obsidian 知识库模板
-│   ├── 00_INBOX/                # 灵感收纳规范
-│   ├── 01_PROJECTS/             # 活跃战役（附哲学读书会真实样例）
-│   ├── 02_AREAS/                # 长期领域（身心、哲学、财务、人际底线）
-│   ├── 03_RESOURCES/AI/         # AI 工具与技能登记资产表
-│   ├── 04_ARCHIVE/              # 归档说明
-│   └── 99_TEMPLATES/            # 项目卡、日审（日省录）、周复盘标准模板
-├── 01_AI_Agent_Rules/           # 【核心灵魂】AI Agent 协同规则与系统提示词
-│   ├── SYSTEM_PROMPT.md         # 通用提示词模板（称谓可自定义）
-│   ├── onboarding/              # 🌟 苏格拉底自适应精神助产冷启动生成器
-│   │   ├── 01_Socratic_Interview.md # 通用五大母题 + 四大情境分支深度自省指令
-│   │   ├── 02_Fact_Extraction.md    # 事实提纯、反空转建模指令
-│   │   └── 03_Vault_Auto_Ingestion.md
-│   ├── skills/                  # 挂载技能库
-│   │   └── socratic-onboarding/ # 交互式自适应助产 Agent 技能
-│   └── rules/
-│       ├── fact_verification.md # FACT 事实核销契约
-│       └── auto_sync_os.md      # [可选插件] 部署反哺自动同步规则
-└── docs/                        # 详细指引
-    ├── QUICK_START.md           # 简洁明了的快速上手教程（含小白版与极客版）
-    └── SAFE_PRACTICE.md         # 隐私与数据安全防泄漏指引
+Know-Yourself/
+├── README.md                        # 项目核心宣言、架构图与部署指南
+├── AGENTS.md                        # 跨平台通用 Agent 接入宪章（读写边界与反顺从原则）
+├── CLAUDE.md                        # Claude Code / 外部客户端快速引导入口
+├── .gitignore                       # 安全防火墙：严格屏蔽 vault/ 下的私密数据
+│
+├── protocols/                       # 【核心灵魂】认知与决策协议库
+│   ├── 01_philosophical_observer.md # 哲学第三者反顺从与苏格拉底诘问协议
+│   ├── 02_info_gap_breaker.md       # 消除信息差与渠道差多维核验协议
+│   ├── 03_multi_perspective_board.md# 四维正交博弈顾问团协议
+│   └── 04_memory_distillation.md    # 记忆蒸馏与认知偏差提炼协议
+│
+├── templates/                       # 【标准骨架】原子化结构模板
+│   ├── L1_situational_atlas.md      # L1 个人境遇与硬约束快照模板 (< 2000 Tokens)
+│   ├── PDR_decision_record.md       # PDR 个人决策记录模板（事前验尸/止损线/复盘）
+│   └── periodic_audit.md            # 周期性客观审计与纠偏模板
+│
+├── vault/                           # 【数据主权区】本地外脑存储（受 gitignore 保护）
+│   ├── L1_atlas/                    # 热记忆：当前境遇快照、个人认知偏差注册表
+│   ├── L2_decisions/                # 温记忆：正在推进的重大决策 PDR 与渠道调研
+│   ├── L3_archive/                  # 冷记忆：已完结复盘的过往决策归档
+│   └── inbox/                       # 写缓冲隔离池：Agent 生成的推演草稿
+│
+├── examples/                        # 【公开演示区】完全脱敏的完整决策闭环样本
+│   └── sample_career_decision_PDR.md# 职业转型双轨制推演与复盘演练样本
+│
+├── scripts/                         # 【自动化工具链】
+│   ├── init_vault.py                # 一键初始化本地 vault 目录与骨架
+│   └── audit_reminder.py            # 自动扫描到期决策并触发复盘提醒
+│
+└── 01_AI_Agent_Rules/               # 【冷启动助产】苏格拉底两阶段认知访谈引擎
+    ├── onboarding/                  # 全人类共通母题 + 4大情境分支
+    └── skills/                      # socratic-onboarding 原生技能
 ```
 
 ---
 
-## 🔒 隐私与安全承诺
+## 🚀 极速起步 (Quick Start)
 
-本项目为**100% 纯净骨架与方法论**：
-- 不含任何原作者的个人隐私数据、真实资产日记或敏感网络拓扑；
-- 预置严格的 `.gitignore`，防止任何 API Key 或 Obsidian 插件凭证泄露；
-- 无论使用者基于本项目记录何种内容，全部数据 100% 存储在使用者本地电脑。
+### 1. 初始化本地外脑
+克隆本项目后，运行自动化脚本一键创建你的本地数据主权区：
+```bash
+python scripts/init_vault.py
+```
 
-详见 [数据安全与防泄漏指南](docs/SAFE_PRACTICE.md)。
+### 2. 锚定你的当前境遇
+打开 `vault/L1_atlas/L1_situational_atlas.md`，填入你当前的生存跑道、时间上限与当前唯一主线目标。
+
+### 3. 开启一场重大决策推演
+复制 `templates/PDR_decision_record.md` 到 `vault/L2_decisions/`，启动你的 AI Agent（已挂载 `AGENTS.md`）：
+- 开启多视角博弈，抹平信息差；
+- 记录事前假设，进行事前验尸，预设止损线；
+- 提交 Git Commit，锁定历史底稿。
+
+### 4. 自动化周期审计
+随时运行以下脚本，扫描已到达复盘日期的历史决策：
+```bash
+python scripts/audit_reminder.py
+```
 
 ---
 
 ## 📜 许可证 (License)
 
 本项目采用 **[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](LICENSE)** 协议开源。
-
-- **您可以自由分享与改编**（需保留原作者署名）；
-- **仅供个人学习与非商业用途**；
-- **相同方式共享**：任何二次改编版本必须以相同许可协议释出。
