@@ -1,5 +1,5 @@
 # Know Yourself (认识你自己) 🦉
-### AI 原生驱动的双核个人操作系统 (Dual-Core Life OS & Agent Workflow)
+### AI 原生驱动的双核个人操作系统 (Dual-Core Life OS & Socratic AI Workflow)
 
 <p align="center">
   <img src="https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg" alt="License: CC BY-NC-SA 4.0">
@@ -11,7 +11,7 @@
 > “认识你自己 (Nosce te ipsum)。” —— 德尔斐神谕刻辞 / 苏格拉底  
 > “未经审视的人生是不值得过的。”
 
-**Know Yourself** 是一套融合了**苏格拉底自省哲学（精神助产术）**、**现代 PARA 知识流**与**自主 AI Agent 事实闭环**的开源个人系统。它不仅提供一套干净纯粹的本地优先笔记底座，更提供了一套**让 AI 通过深度访谈帮你提炼真实自我的“冷启动生成协议”**。
+**Know Yourself** 是一套融合了**苏格拉底认知自省哲学（精神助产术）**、**现代 PARA 知识流**与**自主 AI Agent 事实闭环**的开源个人系统。它不仅提供一套纯粹的本地优先笔记底座，更独创了**一套通过十维认知递进访谈帮你击碎幻想、提炼真实自我的“冷启动生成协议”**。
 
 ---
 
@@ -21,7 +21,7 @@
 
 | 引擎模块 | 说明 | 解决的痛点 |
 | :--- | :--- | :--- |
-| **1. 精神助产式冷启动** | 内置 [苏格拉底自省访谈提示词](01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md)，AI 深度拷问你 5 个问题并挤干水分，**10 分钟自动生成专属于你的系统配置** | 摆脱“面对空文件夹不知道该写啥”的困境，文科生也能轻松上手 |
+| **1. 十维苏格拉底自省助产** | 内置 [十维认知架构访谈协议](01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md) 与原生 Skill，从**生态位、能力定价、终极目标、价值排序、行为基线、成败循环、欲望罗盘、战略分层、不可触碰红线、协同契约**深入剖析 | 摆脱“面对空文件夹不知道该写啥”的困境，挤干愿望水分，量身定做专属外脑 |
 | **2. 双核流动知识底座** | 纯本地 Markdown（Obsidian 开箱即用），严格划分为 INBOX、PROJECTS、AREAS、RESOURCES、ARCHIVE | 终结碎片信息满天飞，降低认知内耗 |
 | **3. FACT 事实核销契约** | 严谨务实的 AI 行为准则，任务绝不虚假承诺，必须经终端实测验证方可打勾 `[FACT]` | 向大模型胡说八道和幻觉宣战，打造确定性知识闭环 |
 
@@ -31,14 +31,14 @@
 
 ```mermaid
 flowchart TD
-    subgraph Socratic ["🦉 精神助产冷启动 (Onboarding)"]
-        INTERVIEW["阶段一：自省访谈<br>(回答 5 组真实问题)"] --> EXTRACT["阶段二：事实提纯<br>(挤干愿望水分，研判决策风格)"]
-        EXTRACT --> INGEST["阶段三：一键落盘<br>(映射为专属项目与长青领域)"]
+    subgraph Socratic ["🦉 十维苏格拉底自省冷启动 (Onboarding Engine)"]
+        INTERVIEW["阶段一：十维认知自省<br>(生态位/定价/目标/冲突/行为/成败/欲望/战略/底线/契约)"] --> EXTRACT["阶段二：反空转事实提纯<br>(挤干水分，提炼目标函数与防崩死循环警报)"]
+        EXTRACT --> INGEST["阶段三：一键结构化落盘<br>(映射为专属项目、责任区与定制化 Agent 提示词)"]
     end
 
     subgraph Core1 ["🏛️ 静态知识底座 (Obsidian Vault)"]
-        INGEST -.-> PROJECTS["01_PROJECTS (核心战役)"]
-        INGEST -.-> AREAS["02_AREAS (长青领域)"]
+        INGEST -.-> PROJECTS["01_PROJECTS (主线战役)"]
+        INGEST -.-> AREAS["02_AREAS (长青守护区)"]
         INBOX["00_INBOX (灵感捕获)"] --> PROJECTS
         INBOX --> AREAS
         INBOX --> RESOURCES["03_RESOURCES (知识/AI资产)"]
@@ -46,7 +46,8 @@ flowchart TD
     end
 
     subgraph Core2 ["⚡ 动态智能副驾 (AI Agent Co-Pilot)"]
-        PROMPT["通用 Agent 规则 (System Prompt)"]
+        PROMPT["定制化 Agent 规则 (System Prompt)"]
+        SKILL["socratic-onboarding 专属助产技能"]
         FACT["FACT 事实核销闭环 (拒绝幻觉)"]
         AUTOSYNC["[可选] 部署反哺写入 OS"]
     end
@@ -61,11 +62,11 @@ flowchart TD
 
 👉 **直接阅读：[小白 3 步开箱即用指南](docs/QUICK_START.md)**
 
-1. **第一步（对话）**：把 [01_Socratic_Interview.md](01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md) 复制发给任意 AI（ChatGPT / Kimi / 豆包 / Claude），如实回答问题；
-2. **第二步（提纯）**：把 [02_Fact_Extraction.md](01_AI_Agent_Rules/onboarding/02_Fact_Extraction.md) 发给它，一键生成属于你的战役卡与责任区；
+1. **第一步（对话）**：把 [01_Socratic_Interview.md](01_AI_Agent_Rules/onboarding/01_Socratic_Interview.md) 复制发给任意 AI（ChatGPT / Claude / Kimi / 豆包），如实回答问题；
+2. **第二步（提纯）**：把 [02_Fact_Extraction.md](01_AI_Agent_Rules/onboarding/02_Fact_Extraction.md) 发给它，一键挤干水分并生成属于你的主线卡与长青守护区；
 3. **第三步（开启）**：下载免费的 [Obsidian](https://obsidian.md/) 打开 `00_Life_OS_Template` 文件夹，把内容粘贴进去，系统瞬间活起来！
 
-*(专业开发者亦可在 [QUICK_START.md](docs/QUICK_START.md) 中查阅本地 Agent 全自动落盘与 FACT 核销集成指南)*
+*(专业开发者亦可在 [QUICK_START.md](docs/QUICK_START.md) 中查阅 `socratic-onboarding` 技能与本地 Agent 全自动落盘指南)*
 
 ---
 
@@ -86,9 +87,11 @@ Know Yourself/
 ├── 01_AI_Agent_Rules/           # 【核心灵魂】AI Agent 协同规则与系统提示词
 │   ├── SYSTEM_PROMPT.md         # 通用提示词模板（称谓可自定义）
 │   ├── onboarding/              # 🌟 苏格拉底精神助产冷启动生成器
-│   │   ├── 01_Socratic_Interview.md
-│   │   ├── 02_Fact_Extraction.md
+│   │   ├── 01_Socratic_Interview.md # 十维认知深度自省访谈指令
+│   │   ├── 02_Fact_Extraction.md    # 事实提纯、反空转建模指令
 │   │   └── 03_Vault_Auto_Ingestion.md
+│   ├── skills/                  # 挂载技能库
+│   │   └── socratic-onboarding/ # 交互式助产冷启动 Agent 技能
 │   └── rules/
 │       ├── fact_verification.md # FACT 事实核销契约
 │       └── auto_sync_os.md      # [可选插件] 部署反哺自动同步规则
