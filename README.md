@@ -23,7 +23,73 @@ Architecturally, this project is built on **100% local-first storage with zero h
 
 ---
 
-## 二、 核心架构与四大支柱 (Core Architecture)
+## 二、 系统架构图与技术路径 (System Architecture & Technology Path)
+
+```mermaid
+flowchart TD
+    %% 现实操作者
+    USER["👤 现实决策者 (Human Operator)<br>直面复杂环境与具体境遇 · 消除信息差与情绪偏见"]
+
+    %% 可视化中枢层
+    subgraph Hub ["🖥️ 本地可视化中枢 (Zero-Dependency Local Web Hub)"]
+        HTML["Know-Yourself.html (单文件离线工作台)<br>基于 HTML5 File System Access API 原生读写本地目录"]
+        RADAR["⏱️ 逾期复盘雷达<br>(红色穿透预警)"]
+        COMPILER["🧩 境遇上下文编译器<br>(一键组装反顺从 Prompt)"]
+        WIZARD["⚖️ PDR 决策账本 & 复盘向导<br>(事前验尸 / 止损 / 归因)"]
+        METER["📊 Token 实时计量器<br>(< 2000 Tokens 熔断守卫)"]
+        
+        HTML --- RADAR
+        HTML --- COMPILER
+        HTML --- WIZARD
+        HTML --- METER
+    end
+
+    %% 三层记忆存储层
+    subgraph MemoryTier ["🏛️ 本地数据主权层 (Local-First 3-Tier Vault)"]
+        INDEX["brain_index.json<br>(全局状态与决策元数据索引)"]
+        L1["L1 活跃境遇全景图 (vault/L1_atlas/)<br>• L1_situational_atlas.md (硬约束快照)<br>• personal_bias_registry.md (历史认知盲区)"]
+        L2["L2 决策账本 (vault/L2_decisions/)<br>• PDR 决策记录 (调研 / 假设 / 止损线 / 验尸)"]
+        L3["L3 历史元规律冷归档 (vault/L3_archive/)<br>• 已复盘决策 (剥离运气 · 沉淀元规律)"]
+        INBOX["inbox/ 写入隔离缓冲池<br>(外部 Agent 唯一落盘区 · 防污染)"]
+
+        L2 -->|到期客观复盘| L3
+        L3 -->|蒸馏教训反哺| L1
+    end
+
+    %% 哲学第三者协议库
+    subgraph Protocols ["⚡ 哲学视角的第三者协议库 (Protocols Matrix)"]
+        P0["00_破冰访谈<br>(自适应自省问答)"]
+        P1["01_哲学观察者<br>(苏格拉底反方证伪 · 双盲审视)"]
+        P2["02_信息差破壁者<br>(一手信源穿透 · 渠道脱媒)"]
+        P3["03_五维正交顾问团<br>(审计/反方/精算/操盘/哲人)"]
+        P4["04_记忆蒸馏流水线<br>(成败归因 · 认知偏差沉淀)"]
+    end
+
+    %% AI 交互层
+    subgraph Agents ["🤖 全场景 AI 协同矩阵 (Agent-Agnostic Co-Pilot)"]
+        WEB_AI["🌐 任意网页版 AI (免费/零门槛)<br>Gemini / ChatGPT / Claude / DeepSeek / 豆包"]
+        LOCAL_AGENT["💻 本地智能体 (IDE / CLI 极客模式)<br>Antigravity / Claude Code / Cursor / Codex"]
+        BOOTSTRAP["AGENTS.md / CLAUDE.md<br>(通用宪章与系统提示词)"]
+    end
+
+    %% 交互连线
+    USER <-->|1. 双击即用 · 可视化交互| HTML
+    HTML <-->|原生双向安全读写| MemoryTier
+
+    %% 网页版 AI 路径
+    COMPILER -.->|2. 一键复制组装上下文| WEB_AI
+    WEB_AI -.->|3. 人工将推演结论贴回锁定| WIZARD
+
+    %% 本地 Agent 路径
+    USER -.->|自然语言指令| LOCAL_AGENT
+    LOCAL_AGENT --- BOOTSTRAP
+    LOCAL_AGENT -->|只读挂载对齐| L1
+    LOCAL_AGENT -->|强制执行| Protocols
+    LOCAL_AGENT -->|推演草稿安全落盘| INBOX
+    INBOX -->|人工核准后合入| L2
+```
+
+### 四大核心架构支柱
 
 1. **三层记忆蒸馏机制（拒绝上下文腐败）**
    * **L1 活跃境遇全景图 (`vault/L1_atlas/`)**：严格控制在 2000 Token 以内的高密度状态快照，实时锚定你当下的核心目标权重、资源硬约束（时间/资金/精力）、不可逾越的底线原则，以及**个人历史认知偏差注册表（Bias Registry）**。
