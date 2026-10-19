@@ -1,0 +1,27 @@
+{
+  "schema_version": "2.0.0",
+  "last_updated": "2026-04-01T12:00:00Z",
+  "owner_alias": "智者 (Observer)",
+  "atlas_path": "L1_atlas/situational_atlas.md",
+  "bias_registry_path": "L1_atlas/bias_registry.md",
+  "decisions": [
+    {
+      "id": "PDR-20260401-001",
+      "title": "是否将个人外接大脑系统彻底剥离 Obsidian 依赖并重构为单文件本地架构",
+      "category": "系统工程",
+      "created_at": "2026-04-01",
+      "review_date": "2026-05-01",
+      "status": "executing",
+      "file_path": "L2_decisions/PDR-20260401-001.md",
+      "chosen_option": "立即执行去 Obsidian 化改造，采用纯标准 Markdown + Know-Yourself.html 单文件本地中枢 + 通用 Agent 宪章。",
+      "core_assumptions": [
+        "重度笔记软件的高学习门槛是阻碍个人决策系统日常高频使用与开源传播的最大摩擦力。",
+        "现代浏览器的 HTML5 File System Access API 足以在零后端依赖下实现纯本地目录直连读写。",
+        "通过一键上下文组装器（Context Compiler），任何免费网页端 AI 都能瞬间加载本地境遇并化身哲学第三者。"
+      ],
+      "falsification_criteria": "如果重构完成后 30 天内，日常记录与决策推演的使用频率低于每周 1 次，或者单文件 HTML 读写出现数据丢失，则证伪该方案。",
+      "outcome_summary": "",
+      "quadrant": ""
+    }
+  ]
+}

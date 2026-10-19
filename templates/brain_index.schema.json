@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BrainIndex",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "last_updated",
+    "owner_alias",
+    "atlas_path",
+    "bias_registry_path",
+    "decisions"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "enum": ["2.0.0"]
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "owner_alias": {
+      "type": "string"
+    },
+    "atlas_path": {
+      "type": "string"
+    },
+    "bias_registry_path": {
+      "type": "string"
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "category",
+          "created_at",
+          "review_date",
+          "status",
+          "file_path",
+          "chosen_option",
+          "core_assumptions",
+          "falsification_criteria"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^PDR-[0-9]{8}-[0-9A-Za-z]+$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "review_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["deliberating", "executing", "validated", "falsified"]
+          },
+          "file_path": {
+            "type": "string"
+          },
+          "chosen_option": {
+            "type": "string"
+          },
+          "core_assumptions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "falsification_criteria": {
+            "type": "string"
+          },
+          "outcome_summary": {
+            "type": "string"
+          },
+          "quadrant": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

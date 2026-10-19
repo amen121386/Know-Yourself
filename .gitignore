@@ -1,43 +1,27 @@
-# ==========================================
-# Know Yourself OS - Strict Security & Privacy Ignore
-# ==========================================
-
-# 1. Credentials, Secrets & Tokens (绝对禁止凭据泄露)
-*.env
-*.env.*
-*.key
-*.pem
-*.cert
-*.token
-*secret*
-*credential*
-id_rsa*
-*.id_rsa
-
-# 2. Obsidian Workspaces & Sensitive Plugin States
-.obsidian/workspace*
-.obsidian/graph.json
-.obsidian/plugins/*/data.json
-.trash/
-
-# 3. Operating System Files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+# 忽略操作系统与编辑器临时文件
 .DS_Store
-._*
+Thumbs.db
+.vscode/
+.idea/
+*.pyc
+__pycache__/
 
-# 4. Logs and Temporary Data
-*.log
-logs/
-temp/
-tmp/
-scratch/
+# 彻底移除遗留的 Obsidian 配置目录
+.obsidian/
 
-# 5. Local Private Data Vault (数据主权保护：仅跟踪 .gitkeep，忽略用户一切真实笔记与私密决策)
-vault/**/*.md
-!vault/**/.gitkeep
-private/
-_private/
-my_secrets/
+# 【核心隐私保护】忽略用户本地 vault/ 下的所有私人境遇与真实决策数据
+# 仅保留目录占位符，防止用户误将个人隐私推送到公开 GitHub 仓库
+vault/*
+!vault/.gitkeep
+!vault/L1_atlas/
+vault/L1_atlas/*
+!vault/L1_atlas/.gitkeep
+!vault/L2_decisions/
+vault/L2_decisions/*
+!vault/L2_decisions/.gitkeep
+!vault/L3_archive/
+vault/L3_archive/*
+!vault/L3_archive/.gitkeep
+!vault/inbox/
+vault/inbox/*
+!vault/inbox/.gitkeep
